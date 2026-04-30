@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para ti 🎈</title>
     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Crimson+Text:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
     <style>
@@ -13,11 +13,12 @@
             background-image: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Cambio: Inicia desde arriba para permitir scroll natural */
             min-height: 100vh;
             margin: 0;
+            padding: 40px 0; /* Espacio arriba y abajo para que la carta no pegue al borde */
             font-family: 'Crimson Text', serif;
-            overflow: hidden; /* Bloqueamos scroll para que no se mueva todo */
+            overflow-x: hidden; /* Solo bloqueamos el scroll horizontal */
             position: relative;
         }
 
@@ -28,36 +29,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none; /* Para que puedas hacer clic en la carta */
+            pointer-events: none;
             z-index: 1;
-        }
-
-        .carta {
-            background: linear-gradient(145deg, #181818, #111111);
-            padding: 10px 20px;
-            width: 70%;
-            max-width: 1000px;
-            border: 1px solid #333;
-            box-shadow: 0 0 40px rgba(88, 29, 143);
-            border-radius: 12px;
-            position: relative;
-            z-index: 10;
-            color: #d1d1d1;
-            text-align: center;
-        }
-
-        h1 {
-            font-family: 'Pirata One', cursive;
-            font-size: 2rem;
-            color: #b71c1c;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 4px #000;
-        }
-
-        p {
-            font-size: 1.1rem;
-            line-height: 1.4;
-            margin-bottom: 12px;
         }
 
         .deathbat {
@@ -72,9 +45,37 @@
             50% { transform: translateY(-15px); }
         }
 
-        /* Estilo de los pétalos/calaveras cayendo */
+        .carta {
+            background: linear-gradient(145deg, #181818, #111111);
+            padding: 20px;
+            width: 90%; /* Ajuste para móviles: más ancho en pantallas pequeñas */
+            max-width: 800px;
+            border: 1px solid #333;
+            box-shadow: 0 0 40px rgba(88, 29, 143, 0.5);
+            border-radius: 12px;
+            position: relative;
+            z-index: 10;
+            color: #d1d1d1;
+            text-align: center;
+            margin: auto; /* Centra la carta si hay espacio */
+        }
+
+        h1 {
+            font-family: 'Pirata One', cursive;
+            font-size: 2rem;
+            color: #b71c1c;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
         .petal {
-            position: absolute;
+            position: fixed; /* Fixed para que no se mueva con el scroll de la carta */
             top: -50px;
             pointer-events: none;
             z-index: 1;
@@ -87,19 +88,23 @@
             }
         }
 
-        .btn-valentine {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 12px 25px;
-            background-color: #b71c1c;
-            color: white;
-            text-decoration: none;
-            font-family: 'Pirata One', cursive;
-            font-size: 1.3rem;
+        #btn-musica {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #1a1a1a;
+            border: 1px solid #b71c1c;
+            color: #b71c1c;
+            cursor: pointer;
+            font-family: 'Pirata One';
+            font-size: 1.2rem;
             border-radius: 5px;
-            box-shadow: 0 4px 15px rgba(183, 28, 28, 0.5);
+            transition: 0.3s;
         }
 
+        #btn-musica:active {
+            background: #b71c1c;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -110,86 +115,66 @@
         <span class="deathbat">🦇🎈🦇</span>
         <h1>Feliz Día del Niño</h1>
         
-        <p>En esta ocacion, no es mi yo del presente quien escribio esto, sino aquel niño, el cual esta sumamente emocionado y feliz 
-    por que tu estas aqui, asi que lo dejo hablar a el:<br><br>
+        <p>En esta ocasión, no es mi yo del presente quien escribió esto, sino aquel niño, el cual está sumamente emocionado y feliz 
+        por que tú estás aquí, así que lo dejo hablar a él:<br><br>
 
-    Hola Anni, a mi tambien me gusta mucho la musica que tu escuchas y que tambien me gustas. Pero veo que mi yo del futuro ya te encontro, ahorita no me dejan salir pero el ya puede, espero que te lleve a muchos lados, quieres ver una pelicula, esq luego me quedo yo solo y me aburro. Hoy es dia del niño, pero a mi ni me dan nada jaja, quiza mi mama cuando llegue haga algo de comer que a mi me guste.<br>Si te dan permiso quiero invitarte y despues jugamos un rato a las escondidas va ?? 💖<br><br>
+        Hola Anni, a mi también me gusta mucho la música que tú escuchas y que también me gustas. Pero veo que mi yo del futuro ya te encontró, ahorita no me dejan salir pero él ya puede, espero que te lleve a muchos lados, quieres ver una película, es que luego me quedo yo solo y me aburro. Hoy es día del niño, pero a mi ni me dan nada jaja, quizá mi mamá cuando llegue haga algo de comer que a mi me guste.<br>Si te dan permiso quiero invitarte y después jugamos un rato a las escondidas va ?? 💖<br><br>
 
-    Me gusto mucho esta cancion, me siento poderoso cuando la escucho, espero y tambien a ti te pueda dar poder ... 💖</p>
-        
+        Me gustó mucho esta canción, me siento poderoso cuando la escucho, espero y también a ti te pueda dar poder ... 💖</p>
         
         <p style="font-family: 'Pirata One'; font-size: 1.5rem; color: #b71c1c; margin: 15px 0;">TE AMO MUCHO</p>
 
         <div id="player" style="display:none;"></div>
-<script src="https://www.youtube.com/iframe_api"></script>
+        <script src="https://www.youtube.com/iframe_api"></script>
 
-<button id="btn-musica" onclick="toggleMusica()" style="margin-top: 20px; background: none; border: 1px solid #444; color: #b71c1c; cursor: pointer; font-family: 'Pirata One';">
-    🎵 REPRODUCIR BANDA SONORA 💀
-</button>
-
-<script>
-    var player;
-    function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-            height: '0',
-            width: '0',
-            videoId: 'DelhLppPSxY', // ID de Warmness on the Soul
-            events: {
-                'onReady': onPlayerReady
-            }
-        });
-    }
-
-    function onPlayerReady(event) {
-        // El reproductor está listo
-    }
-
-    function toggleMusica() {
-        var estado = player.getPlayerState();
-        if (estado == 1) {
-            player.pauseVideo();
-            document.getElementById('btn-musica').innerText = "🎵 REPRODUCIR BANDA SONORA 💀";
-        } else {
-            player.playVideo();
-            document.getElementById('btn-musica').innerText = "⏸️ PAUSAR MÚSICA";
-        }
-    }
-</script>
+        <button id="btn-musica" onclick="toggleMusica()">
+            🎵 REPRODUCIR BANDA SONORA 💀
+        </button>
+    </div>
 
     <script>
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '0',
+                width: '0',
+                videoId: 'DelhLppPSxY', 
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {}
+
+        function toggleMusica() {
+            var estado = player.getPlayerState();
+            if (estado == 1) {
+                player.pauseVideo();
+                document.getElementById('btn-musica').innerText = "🎵 REPRODUCIR BANDA SONORA 💀";
+            } else {
+                player.playVideo();
+                document.getElementById('btn-musica').innerText = "⏸️ PAUSAR MÚSICA";
+            }
+        }
+
         const container = document.getElementById('lluvia-container');
         const emojis = ['❤️', '🥀', '💀', '🔥'];
 
         function createPetal() {
             const petal = document.createElement('div');
             petal.classList.add('petal');
-            
-            // Elegir emoji aleatorio
             petal.innerText = emojis[Math.floor(Math.random() * emojis.length)];
-            
-            // Posición horizontal aleatoria
             petal.style.left = Math.random() * 100 + 'vw';
-            
-            // Tamaño aleatorio
             const size = Math.random() * 15 + 15 + 'px';
             petal.style.fontSize = size;
-            
-            // Velocidad aleatoria (entre 3 y 6 segundos)
-            const duration = Math.random() * 3 + 3;
+            const duration = Math.random() * 3 + 4;
             petal.style.animationDuration = duration + 's';
-            
-            // Opacidad aleatoria
             petal.style.opacity = Math.random() * 0.7 + 0.3;
-
             container.appendChild(petal);
-
-            // Limpiar el DOM eliminando el elemento cuando termine la animación
-            setTimeout(() => {
-                petal.remove();
-            }, duration * 1000);
+            setTimeout(() => { petal.remove(); }, duration * 1000);
         }
 
-        // Crear un pétalo cada 300ms
         setInterval(createPetal, 300);
     </script>
 </body>
